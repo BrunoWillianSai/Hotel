@@ -1,1 +1,105 @@
-<p>reserva works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-10 m-auto">
+            <h1 class="text-center">Reservas</h1>
+            <form [formGroup]="formGroupReserva">
+
+                <div class="mb-3">
+                  <label for="inputHospede" class="form-label">Hospede: </label>
+                  <input formControlName="hospede"  type="text" class="form-control" id="inputHospede" placeholder="Digite o hospede">
+                </div>
+                
+
+                <div class="mb-3 mt-3 modalidade">
+                    <label class="form-label d-block">Quarto:</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" formControlName="quarto" value="Simples" id="simples">
+                        <label class="form-check-label" for="Simples">Simples</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" formControlName="quarto" value="Duplo" id="duplo">
+                        <label class="form-check-label" for="Duplo">Duplo</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" formControlName="quarto" value="Suíte" id="suíte">
+                        <label class="form-check-label" for="Suíte">Suíte</label>
+                    </div>
+                </div>
+
+                 <div class="mb-3">
+                  <label for="inputDatae" class="form-label">Data de entrada: </label>
+                  <input formControlName="datae"  type="date" class="form-control" id="inputDatae" placeholder="Digite a data de entrada">
+                </div>
+
+                 <div class="mb-3">
+                  <label for="Datas" class="form-label">Data de saida: </label>
+                  <input formControlName="datas"  type="date" class="form-control" id="inputDatas" placeholder="Digite a data de saida">
+                </div>
+
+                <div class="mb-3">
+                  <label for="inputNpessoas" class="form-label">Número de pessoas: </label>
+                  <input formControlName="npessoas"  type="number" class="form-control" id="inputNpessoas" placeholder="Digite o número de pessoas">
+                </div>
+
+                    <div class="mb-3 mt-3">
+                <label class="form-label d-block">Café da manhã</label>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" formControlName="cafe" id="cafeCheck">
+                    <label class="form-check-label" for="cafeCheck">Quero incluir café da manhã</label>
+                  </div>
+                   </div>
+
+                     <div class="mb-3">
+                  <label for="inputObs" class="form-label">Observações: </label>
+                  <textarea formControlName="obs"  type="text" class="form-control" id="inputObs" placeholder="Tem alguma observação?"></textarea>
+                </div>
+
+               
+ 
+      
+              
+              <div class="btn-container">
+                <button *ngIf="!isEditing" class="btn btn-primary" (click)="onClickSave()"  >Salvar</button>
+                <button *ngIf="isEditing"  class="btn btn-primary" (click)="onClickConfirmUpdate()" >Alterar</button>
+                <button class="btn btn-primary ms-2" (click)="onClickClear()">Limpar</button>
+              </div>
+              
+            </form>
+
+              <h1 class="text-center">Reservas Agendadas</h1>
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Hospede</th>
+                    <th scope="col">Quarto</th>
+                     <th scope="col">Data de entrada</th>
+                      <th scope="col">Data de saída</th>
+                       <th scope="col">Número de pessoas</th>
+                        <th scope="col">Café da manhã</th>
+                         <th scope="col">Observação</th>
+                    <th scope="col">Remover</th>
+                    <th scope="col">Editar</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let r of reserva">
+                    <th scope="row">{{r.id}}</th>
+                    <td>{{r.hospede}}</td>
+                     <td>{{ r.quarto }}</td>
+                      <td>{{ r.datae | date:'dd/MM/yyyy'}}</td>
+                       <td>{{ r.datas | date:'dd/MM/yyyy' }}</td>
+                        <td>{{ r.npessoas }}</td>
+                         <td>{{ r.cafe  ? 'Sim' : 'Não'}}</td>
+                          <td>{{ r.obs }}</td>
+                    <td><button class="btn btn-danger" (click)="onClickDelete(r)"  >Remover</button>   </td>
+                    <td><button class="btn btn-primary" (click)="onClickUpdate(r)"  >Editar</button>   </td>
+
+                  </tr>
+                </tbody>
+              </table>
+
+
+        </div>
+    </div>    
+</div>

@@ -1,13 +1,20 @@
 {
   "hospede": [
     {
-      "id": 1,
-      "nome": "Bruno Sai",
-      "cpf": "45856987422",
-      "telefone": "123456789",
-      "email": "vitorroque@gmail.com",
-      "fidelidade": false
-
+      "id": 2,
+      "nome": "Cristiano Ronaldo",
+      "cpf": "777.777.777-77",
+      "telefone": 55117777777,
+      "email": "cr7lindao@hotmail.com",
+      "fidelidade": true
+    },
+    {
+      "id": 3,
+      "nome": "Vitor Roque",
+      "cpf": "345.678.234-99",
+      "telefone": 551123465437,
+      "email": "vitorque@hotmail.com",
+      "fidelidade": ""
     }
   ],
   "reserva": [
@@ -20,7 +27,26 @@
       "npessoas": 1,
       "cafe": true,
       "obs": "Favor fornecer 2 toalhas"
+    },
+    {
+      "id": 2,
+      "hospede": "Cristiano Ronaldo",
+      "quarto": "Suíte",
+      "datae": "2025-09-30",
+      "datas": "2025-10-01",
+      "npessoas": 2,
+      "cafe": true,
+      "obs": "Secador de cabelo no banheiro"
+    },
+    {
+      "id": 3,
+      "hospede": "Vitor Roque",
+      "quarto": "Duplo",
+      "datae": "2025-05-12",
+      "datas": "2025-05-15",
+      "npessoas": 5,
+      "cafe": true,
+      "obs": "TV no teto"
     }
   ]
-
 }

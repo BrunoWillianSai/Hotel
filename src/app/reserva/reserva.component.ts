@@ -12,7 +12,7 @@ import { ReservaService } from '../reserva.service';
 export class ReservaComponent implements OnInit {
 
 
-  hospede: Reserva[] = []; //array
+  reserva: Reserva[] = []; //array
   formGroupReserva: FormGroup; // cria o formulário
   isEditing: boolean = false;
 

@@ -1,0 +1,14 @@
+.navbar {
+    background-color: #949494
+    ;
+}
+.navbar .titulo {
+    font-size: 30px; 
+    color: #ffffff
+}
+
+.nav-link {
+    color: #ffffff;
+    font-size: 25px;
+    text-decoration: underline;
+}
