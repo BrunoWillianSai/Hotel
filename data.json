@@ -1,0 +1,26 @@
+{
+  "hospede": [
+    {
+      "id": 1,
+      "nome": "Bruno Sai",
+      "cpf": "45856987422",
+      "telefone": "123456789",
+      "email": "vitorroque@gmail.com",
+      "fidelidade": false
+
+    }
+  ],
+  "reserva": [
+    {
+      "id": 1,
+      "hospede": "Bruno Sai",
+      "quarto": "Simples",
+      "datae": "10/05/2025",
+      "datas": "11/05/2025",
+      "npessoas": 1,
+      "cafe": true,
+      "obs": "Favor fornecer 2 toalhas"
+    }
+  ]
+
+}

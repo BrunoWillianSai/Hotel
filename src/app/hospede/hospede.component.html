@@ -1,0 +1,76 @@
+<div class="container">
+    <div class="row">
+        <div class="col-8 m-auto">
+            <h1 class="text-center">Cadastro de Hospedes</h1>
+            <form [formGroup]="formGroupHospede">
+
+                <div class="mb-3">
+                  <label for="inputNome" class="form-label">Nome: </label>
+                  <input formControlName="nome"  type="text" class="form-control" id="inputNome" placeholder="Digite o seu nome">
+                </div>
+                
+
+                <div class="mb-3">
+                    <label for="inputCpf" class="form-label">CPF:</label>
+                    <input formControlName="cpf"  type="text" class="form-control" id="inputCpf" placeholder="Digite seu CPF">
+                </div>
+                    
+                <div class="mb-3">
+                    <label for="inputTelefone" class="form-label">Telefone:</label>
+                    <input formControlName="telefone"  type="number" class="form-control" id="inputTelefone" placeholder="Digite seu telefone">
+                </div>
+
+                   <div class="mb-3">
+                    <label for="inputEmail" class="form-label">Email:</label>
+                    <input formControlName="email"  type="text" class="form-control" id="inputEmail" placeholder="Digite seu Email">
+                </div>
+
+                   <div class="mb-3 mt-3">
+                <label class="form-label d-block">Fidelidade</label>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" formControlName="fidelidade" id="fidelidadeCheck">
+                    <label class="form-check-label" for="fidelidadeCheck">Fidelidade</label>
+                  </div>
+
+                
+
+                
+
+
+               
+              
+              <div class="btn-container">
+                <button *ngIf="!isEditing" class="btn btn-primary" (click)="onClickSave()"  >Salvar</button>
+                <button *ngIf="isEditing"  class="btn btn-primary" (click)="onClickConfirmUpdate()" >Alterar</button>
+                <button class="btn btn-primary ms-2" (click)="onClickClear()">Limpar</button>
+              </div>
+              
+            </form>
+
+              <h1 class="text-center">Professores Cadastrados</h1>
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Disciplina</th>
+                    <th scope="col">Remover</th>
+                    <th scope="col">Editar</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let p of nomedocompoente1">
+                    <th scope="row">{{p.id}}</th>
+                    <td>{{p.nome}}</td>
+                     <td>{{ p.disciplina }}</td>
+                    <td><button class="btn btn-danger" (click)="onClickDelete(p)"  >Remover</button>   </td>
+                    <td><button class="btn btn-primary" (click)="onClickUpdate(p)"  >Editar</button>   </td>
+
+                  </tr>
+                </tbody>
+              </table>
+
+
+        </div>
+    </div>    
+</div>
